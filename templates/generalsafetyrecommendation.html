@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Home | Care 360</title>
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/animate.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/lightbox.css') }}" rel="stylesheet">
+	<link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+	<link href="{{ url_for('static', filename='css/responsive.css') }}" rel="stylesheet">
+  <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+
+    <!-- [if lt IE 9]>
+	    <script src="js/html5shiv.js"></script>
+	    <script src="js/respond.min.js"></script>
+    <![endif] -->
+    <link rel="shortcut icon" href="static/images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="static/images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="static/images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="static/images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="static/images/ico/apple-touch-icon-57-precomposed.png">
+</head><!--/head-->
+
+<body>
+	<header id="header">
+        <div class="navbar navbar-inverse" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="{{ url_for('index') }}">
+                    	<h1><img src="static/images/logo-care360.png" alt="logo" class="img-fluid"height="75px"
+                            width="75px"> Care 360</h1>
+                    </a>
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+
+
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active"><a href="{{ url_for('index') }}">Home</a></li>
+                        <li class="dropdown"><a href="#">Home Safety<i class="fa fa-angle-down"></i></a>
+                            <ul role="menu" class="sub-menu">
+                                <li><a href="{{ url_for('safety_questionnaire')}}">Home Safety Questionnaire</a></li>
+                                <li><a href="{{ url_for('generalsafety')}}">General Safety Guidelines</a></li>
+                                <li><a href="{{ url_for('safetybycouncil')}}"> Natural Disaster Assist</a></li>
+                                <li><a href="#"> COVID-19 Injuries Assist</a></li>
+
+                            </ul>
+                        </li>
+                        <!-- <li class="dropdown"><a href="#">Healthy Diet<i class="fa fa-angle-down"></i></a>
+                            <ul role="menu" class="sub-menu">
+                                <li><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                            </ul>
+                        </li> -->
+                        <!-- <li class="dropdown"><a href="#">Physical Activity<i class="fa fa-angle-down"></i></a>
+                            <ul role="menu" class="sub-menu">
+                                <li><a href="#">1t</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                            </ul>
+                        </li> -->
+                        <li><a href="{{ url_for('login') }}">Admin Login</a></li>
+                        <li><a href="#">Credits</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </header>
+    <!--/#header-->
+
+    <section id="home-slider">
+        <div class="container">
+            <div class="row">
+                <div class="main-slider">
+                    <div class="slide-text">
+                        <h1>Time to be an armour for grandparent</h1>
+                        <p>
+                          Safety is essential for all ages of people.
+                        </p>
+                    </div>
+                    <img src="static/images/Photos/kids/Artboard_1.png" class="slider-hill" alt="slider image" height="350px" width="350px">
+                    <img src="static/images/home/slider/birds1.png" class="slider-birds1" alt="slider image">
+                   <!-- <img src="static/images/home/slider/birds2.png" class="slider-birds2" alt="slider image"> -->
+
+                </div>
+            </div>
+        </div>
+        <div class="preloader"><i class="fa fa-sun-o fa-spin"></i></div>
+    </section>
+    <!--/#home-slider-->
+<br>
+<br>
+
+
+<section id="clients">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="clients text-center wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
+                    <h1 class="title">General Safety Recommendations</h1><br><br>
+                    <p><img src="static/images/safetyworker.jpg" class="img-responsive" alt="detective image"
+                            width="20%">
+                    </p>
+                </div>
+                <h2 class="title" align="center"> Please read the instructions below and follow these in your day to day life.
+                    Also look around your and your grandparents house and try to follow safety instructions and make you house safer.
+                </h2>
+                <br><br><br>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="features">
+    <div class="container">
+        <div class="row">
+            <div class="single-features">
+                <div class="col-sm-5 wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">
+                    <img src="static/images/Photos/light.png" class="img-responsive" alt="">
+                </div>
+                <div class="col-sm-6 wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
+                    <h2>Light Safety</h2>
+                    <P>Make sure there are adequate lighting in driveway,garage,walkways,at all doors,night-lights/signs giving directions to the bathroom, laundry and kitchen.</P>
+                </div>
+            </div>
+            <div class="single-features">
+                <div class="col-sm-6 col-sm-offset-1 align-right wow fadeInLeft" data-wow-duration="500ms"
+                    data-wow-delay="300ms">
+                    <h2>Living room safety</h2>
+                    <P>Make sure the floors are slip resistant
+                        and a clear, unobstructed path through the room (no clutter, cords, wires, baskets or other things to trip over)
+                        </P>
+                </div>
+                <div class="col-sm-5 wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
+                    <img src="static/images/Photos/livingroom.png" class="img-responsive" alt="">
+                </div>
+            </div>
+            <div class="single-features">
+                <div class="col-sm-5 wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">
+                    <img src="static/images/Photos/bedroom.jpg" class="img-responsive" alt="">
+                </div>
+                <div class="col-sm-6 wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
+                    <h2>Bedroom Safety</h2>
+                    <P>Make sure to remove hazardous items,such as electric blankets and hot water bottles.
+                        Make sure having wood and linoleum floors non-skid
+                        Make sure of having a light at the entrance to the room and reachable from the bed
+                        Make sure having a telephone and assistive walking devices (cane, walker, wheelchair) within reach of the bed.
+                        </P>
+                </div>
+            </div>
+            <div class="single-features">
+                <div class="col-sm-6 col-sm-offset-1 align-right wow fadeInLeft" data-wow-duration="500ms"
+                    data-wow-delay="300ms">
+                    <h2>Kitchen Safety</h2>
+                    <P>Make sure Has access to the stove been controlled (knobs removed, lock on oven door, stove connected to hidden circuit breaker or gas valve),
+                        Make sure have all drawers and cabinets with safe objects labeled, 
+                        Make sure Have sharp knives and other dangerous implements been removed or locked up.</P>
+                </div>
+                <div class="col-sm-5 wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
+                    <img src="static/images/Photos/kitchen.png" class="img-responsive" alt="">
+                </div>
+            </div>
+            <div class="single-features">
+                <div class="col-sm-5 wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">
+                    <img src="static/images/Photos/bathroom.jpg" class="img-responsive" alt="">
+                </div>
+                <div class="col-sm-6 wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
+                    <h2>Bathroom Safety</h2>
+                    <P>Make sure have all medicines and non-electric razors been put away,
+                        Make sure a shower or bath seat accessible to allow a person to direct the flow of water desired
+                    </P>
+                </div>
+            </div>
+            <div class="single-features">
+                <div class="col-sm-6 col-sm-offset-1 align-right wow fadeInLeft" data-wow-duration="500ms"
+                    data-wow-delay="300ms">
+                    <h2>Shower Safety</h2>
+                    <P>make sure a non-skid bathmat in the bathtub
+                        Make sure a tub or shower seat.
+                    </P>
+                </div>
+                <div class="col-sm-5 wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
+                    <img src="static/images/Photos/shower.jpg" class="img-responsive" alt="">
+                </div>
+            </div>
+            <div class="single-features">
+                <div class="col-sm-5 wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">
+                    <img src="static/images/Photos/laundry.jpg" class="img-responsive" alt="">
+                </div>
+                <div class="col-sm-6 wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
+                    <h2>Laundry Safety</h2>
+                    <P>Make sure having a non-slip floor surface.</P>
+                </div>
+            </div>
+            <div class="single-features">
+                <div class="col-sm-6 col-sm-offset-1 align-right wow fadeInLeft" data-wow-duration="500ms"
+                    data-wow-delay="300ms">
+                    <h2>Toilet Safety</h2>
+                    <P>Make sure sturdy grab bars at the toilet (or toilet arms and a raised seat)
+                        Make sure the toilet seat in good condition and securely fastened
+                        Make sure toilet paper easily reachable from the toilet seat.
+                    </P>
+                </div>
+                <div class="col-sm-5 wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
+                    <img src="static/images/Photos/toilet.jpg" class="img-responsive" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+    <!--/#clients-->
+
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center bottom-separator">
+                    <img src="static/images/home/under.png" class="img-responsive inline" alt="">
+                </div>
+                <div class="col-sm-12">
+                    <div class="copyright-text text-center">
+                        <p>Care360</p>
+                        <p>
+                            Disclaimer: We provide recommendations on the basis of Australian Government Home Safety,Diet and Physical Activity Guidelines for Older people.
+                        </p>
+                        <p> Credits : WebUi Theme by Themeum</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--/#footer-->
+
+    <script type="text/javascript" src="static/js/jquery.js"></script>
+    <script type="text/javascript" src="static/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="static/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="static/js/wow.min.js"></script>
+    <script type="text/javascript" src="static/js/main.js"></script>
+</body>
+</html>
