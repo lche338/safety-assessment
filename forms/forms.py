@@ -21,7 +21,7 @@ class SafetyQuestionnaireForm(FlaskForm):
     grandparent_age = SelectField('Selet the age of your grandparents:',
                     choices =[('65-74','65-74'),('75-84','75-84'),('85-94','85-94'),('95+','95+'),('none of above or not sure','none of above or not sure')],validators=[DataRequired()])
 
-    adequate_sunlight = SelectField('Does the house where your grandparent lived have adequate lighting in the following areas? (mutiple choice)',
+    adequate_light = SelectField('Does the house where your grandparent lived have adequate lighting in the following areas? (mutiple choice)',
                         choices=[('Bedroom','Bedroom'),('Kitchen','Kitchen'),('Living Room','Living Room'),('Walkways','Walkways'),('Laundry','Laundry'),('Bathroom','Bathroom'),('Stairs','Stairs'),('Driveway and garage','Driveway and garage')], validators=[DataRequired()])
 
     night_light = SelectField('Does the house where your grandparent lived have night-lights or signs giving directions to the following areas? (mutiple choice)',
