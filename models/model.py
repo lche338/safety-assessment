@@ -38,38 +38,51 @@ class safety_questionnaire_database(db.Model):
     __tablename__ = 'safety_questionnaire'
     id = db.Column(db.Integer, primary_key = True)
     kid_name = db.Column(db.Text)
-    difficulty_bed = db.Column(db.Text)
+    grandparent_name = db.Column(db.Text)
+    grandparent_gender = db.Column(db.Text)
+    grandparent_age = db.Column(db.Text)
     adequate_sunlight = db.Column(db.Text)
-    floor_hazard = db.Column(db.Text)
-    towel_rails = db.Column(db.Text)
-    unsteady_standing = db.Column(db.Text)
-    water_presence = db.Column(db.Text)
-    bench_height = db.Column(db.Text)
-    kitchen_reach = db.Column(db.Text)
-    slip_products = db.Column(db.Text)
-    electrical_cords = db.Column(db.Text)
-    stairs_edge = db.Column(db.Text)
-    stairs_handrails = db.Column(db.Text)
-    path_checked = db.Column(db.Text)
-
+    night_light = db.Column(db.Text)
+    clear_path = db.Column(db.Text)
+    floors_condition = db.Column(db.Text)
+    difficluties_walking = db.Column(db.Text)
+    non_slip = db.Column(db.Text)
+    grab_bars = db.Column(db.Text)
+    telephone_reach = db.Column(db.Text)
+    difficulties_chairs = db.Column(db.Text)
+    items_reached = db.Column(db.Text)
+    handrails_needed = db.Column(db.Text)
+    smoke_detectors = db.Column(db.Text)
+    fire_extinguisher = db.Column(db.Text)
+    contact_information = db.Column(db.Text)
+    key_entry = db.Column(db.Text)
+    exit_plan = db.Column(db.Text)
+    
     #instantiate the values that are eing put up on the forms from the front end in the init method
     #the class
-    def __init__(self,kid_name,difficulty_bed, adequate_sunlight, floor_hazard, towel_rails, unsteady_standing,
-    water_presence,bench_height,kitchen_reach,slip_products, electrical_cords, stairs_edge, stairs_handrails, path_checked):
+    def __init__(self,kid_name,grandparent_name,grandparent_gender,grandparent_age,adequate_sunlight,night_light,
+    clear_path,floors_condition,difficluties_walking,non_slip,grab_bars,telephone_reach,difficulties_chairs,items_reached,
+    handrails_needed,smoke_detectors,fire_extinguisher,contact_information,key_entry,exit_plan):
         self.kid_name = kid_name
-        self.difficulty_bed = difficulty_bed
+        self.grandparent_name = grandparent_name
+        self.grandparent_gender = grandparent_gender
+        self.grandparent_age = grandparent_age
         self.adequate_sunlight = adequate_sunlight
-        self.floor_hazard = floor_hazard
-        self.towel_rails = towel_rails
-        self.unsteady_standing = unsteady_standing
-        self.water_presence = water_presence
-        self.bench_height = bench_height
-        self.kitchen_reach = kitchen_reach
-        self.slip_products = slip_products
-        self.electrical_cords = electrical_cords
-        self.stairs_edge = stairs_edge
-        self.stairs_handrails = stairs_handrails
-        self.path_checked = path_checked
+        self.night_light = night_light
+        self.clear_path = clear_path
+        self.floors_condition = floors_condition
+        self.difficluties_walking = difficluties_walking
+        self.non_slip = non_slip
+        self.grab_bars = grab_bars
+        self.telephone_reach = telephone_reach
+        self.difficulties_chairs = difficulties_chairs
+        self.items_reached = items_reached
+        self.handrails_needed = handrails_needed
+        self.smoke_detectors = smoke_detectors
+        self.fire_extinguisher = fire_extinguisher
+        self.contact_information = contact_information
+        self.key_entry = key_entry
+        self.exit_plan = exit_plan
 
     #method to return the values
     # def __repr__(self):
