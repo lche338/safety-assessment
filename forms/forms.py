@@ -45,7 +45,7 @@ class SafetyQuestionnaireForm(FlaskForm):
     telephone_reach = RadioField('Is there a telephone within reach of the bed? Are telephones positioned low enough so they can be reached if a fall occurs?',
                     choices =[('Yes','Yes'),('No','No')],validators=[DataRequired()])
 
-    difficulties = RadioField('Do you think your grandparent have difficulties in getting up from chairs?',
+    difficulties_chairs = RadioField('Do you think your grandparent have difficulties in getting up from chairs?',
                         choices =[('Yes','Yes'),('No','No')],validators=[DataRequired()])
 
     items_reached = RadioField('Do you think your grandparent used items visible and easily reached in the Kitchen?',
