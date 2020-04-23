@@ -11,46 +11,63 @@ from wtforms import ValidationError
 
 class SafetyQuestionnaireForm(FlaskForm):
     #create the forms details
-    kid_name = StringField('Please enter your name.',validators=[DataRequired()])
+    kid_name = StringField('Please enter your name.',validators=[DataRequired()]
+                           
+    grandparent_name = StringField('Please enter your grandparent name.',validators=[DataRequired()])
 
-    difficulty_bed = RadioField('Do you think your grandparents have difficulty in getting out of bed?',
+    gender_grandparent = SelectField('Selet the gender of your grandparent:',
+                    choices =[('Male','Male'),('Female','Female')],validators=[DataRequired()])
+                           
+    gender_grandparent = SelectField('Selet the age of your grandparents:',
+                    choices =[('65-74','65-74'),('75-84','75-84'),('85-94','85-94'),('95+','95+'),('none of above or not sure','none of above or not sure')],validators=[DataRequired()])
+
+    adequate_sunlight = SelectField('Does the house where your grandparent lived have adequate lighting in the following areas? (mutiple choice)',
+                        choices=[('Bedroom','Bedroom'),('Kitchen','Kitchen'),('Living Room','Living Room'),('Walkways','Walkways'),('Laundry','Laundry'),('Bathroom','Bathroom'),('Stairs','Stairs'),('Driveway and garage','Driveway and garage')], validators=[DataRequired()])
+
+    night_light = SelectField('Does the house where your grandparent lived have night-lights or signs giving directions to the following areas? (mutiple choice)',
+                        choices=[('Bedroom','Bedroom'),('Kitchen','Kitchen'),('Living Room','Living Room'),('Walkways','Walkways'),('Laundry','Laundry'),('Bathroom','Bathroom'),('Stairs','Stairs'),('Driveway and garage','Driveway and garage')], validators=[DataRequired()])                      
+                           
+    clear_path = RadioField('Do you think there is a clear, unobstructed path through the room?',
                     choices =[('Yes','Yes'),('No','No')],validators=[DataRequired()])
 
-    adequate_sunlight = SelectField('Where do you think the house where your grandparents lived have adequate sunlight getting through?',
-                        choices=[('Stairs','Stairs'),('Bathroom','Bathroom'),('Kitchen','Bedroom')], validators=[DataRequired()])
+    floors_condition = RadioField('Do you think there is wood floors slip resistant and carpets in good condition with non-slip backing (not frayed or turned up, no upturned corner that someone could trip over)?',
+                        choices =[('Yes','Yes'),('No','No')],validators=[DataRequired()])
 
-    floor_hazard = RadioField('Do you think there always have some hazards on the floor at home?',
+    difficluties_walking = RadioField('Do you think your grandparent have difficluties in walking by himself/herself?',
                     choices =[('Yes','Yes'),('No','No')],validators=[DataRequired()])
 
-    towel_rails = SelectField('Do your grandparents tend to hold on taps or towel rails when getting in or out of the bath or shower?',
-                        choices=[('Taps','Taps'),('Tower Rails','Tower Rails'),('Wall','Wall')], validators=[DataRequired()])
+    non_slip = RadioField('Do you think there is non-slip/non-skid floor surface even when wet in the Bathroom and Laundry?',
+                        choices =[('Yes','Yes'),('No','No')],validators=[DataRequired()])
 
-    unsteady_standing = RadioField('Did your grandparents mention about the unsteady standing when they take a bath?',
+    grab_bars = RadioField('Ask your grandparent are there grab bars in the Bathroom as he/she needed?',
+                        choices =[('Yes','Yes'),('No','No')],validators=[DataRequired()])
+
+    telephone_reach = RadioField('Is there a telephone within reach of the bed? Are telephones positioned low enough so they can be reached if a fall occurs?',
                     choices =[('Yes','Yes'),('No','No')],validators=[DataRequired()])
 
-    water_presence = SelectField('Where do you think there is always water in your grandparents’ home?',
-                        choices=[('Bathroom','Bathroom'),('Kitchen','Kitchen'),('Garden','Garden')], validators=[DataRequired()])
+    difficulties = RadioField('Do you think your grandparent have difficulties in getting up from chairs?',
+                        choices =[('Yes','Yes'),('No','No')],validators=[DataRequired()])
 
-    bench_height = SelectField('What do you think the height of bench or counter is not at a comfortable for your grandparents?',
-                        choices=[('Too High','Too High'),('Too Low','Too Low'),('Suitable','Suitable')], validators=[DataRequired()])
-
-    kitchen_reach = RadioField('Do you think your grandparents can always reach things easily in kitchen?',
+    items_reached = RadioField('Do you think your grandparent used items visible and easily reached in the Kitchen?',
                     choices =[('Yes','Yes'),('No','No')],validators=[DataRequired()])
 
-    slip_products = SelectField('What slip products you think are there? Are there  any rugs and mats throughout your grandparent''s house?',
-                        choices=[('Rugs','Rugs'),('Mats','Mats'),('Blankets','Blankets')], validators=[DataRequired()])
-
-    electrical_cords = RadioField('Is there any electrical cords running across walkways in your grandparents house?',
+    handrails_needed = RadioField('Do you think there are handrails for stairs and steps in the house as needed for your grandparent?',
                     choices =[('Yes','Yes'),('No','No')],validators=[DataRequired()])
 
-    stairs_edge = RadioField('Do you think the edge of stairs are clear in your grandparents’ house?',
+    smoke_detectors = RadioField('Are smoke detectors installed and working on every level of the home, outside sleeping areas and inside bedrooms?',
                     choices =[('Yes','Yes'),('No','No')],validators=[DataRequired()])
 
-    stairs_handrails = RadioField('Is there any handrails for stairs and steps in your grandparents’ house?',
+    fire_extinguisher = RadioField('Is there a fire extinguisher in the kitchen? and not expire?',
                     choices =[('Yes','Yes'),('No','No')],validators=[DataRequired()])
-
-    path_checked = RadioField('	Do you think the paths around your grandparents’ house are cracked?',
+                           
+    contact_information = RadioField('Ask your grandparent if he/she has contact information to someone in an emergency? If yes, Check if emergency numbers posted on or near all telephones?',
                     choices =[('Yes','Yes'),('No','No')],validators=[DataRequired()])
+                           
+    key_entry = RadioField('Is there a safe place outside to hide a key to the house for emergency entry?',
+                    choices =[('Yes','Yes'),('No','No')],validators=[DataRequired()])
+                           
+    exit_plan = RadioField('Ask your grandparents if there is an emergency exit plan?',
+                    choices =[('Yes','Yes'),('No','No')],validators=[DataRequired()])     
 
     submit = SubmitField('Submit Safety Assesment Questonnaire')
 
