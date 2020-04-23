@@ -59,40 +59,54 @@ def safety_questionnaire():
     if form.validate_on_submit():
         # get the data in the session object for the client side
         session['kid_name'] = form.kid_name.data
-        session['difficulty_bed'] = form.difficulty_bed.data
-        session['adequate_sunlight'] = form.adequate_sunlight.data
-        session['floor_hazard'] = form.floor_hazard.data
-        session['towel_rails'] = form.towel_rails.data
-        session['unsteady_standing'] = form.unsteady_standing.data
-        session['water_presence'] = form.water_presence.data
-        session['bench_height'] = form.bench_height.data
-        session['kitchen_reach'] = form.kitchen_reach.data
-        session['slip_products'] = form.slip_products.data
-        session['electrical_cords'] = form.electrical_cords.data
-        session['stairs_edge'] = form.stairs_edge.data
-        session['stairs_handrails'] = form.stairs_handrails.data
-        session['path_checked'] = form.path_checked.data
-
+        session['grandparent_name'] = form.grandparent_name.data
+        session['grandparent_gender'] = form.grandparent_gender.data
+        session['grandparent_age'] = form.grandparent_age.data
+        session['adequate_light'] = form.adequate_light.data
+        session['night_light'] = form.night_light.data
+        session['clear_path'] = form.clear_path.data
+        session['floors_condition'] = form.floors_condition.data
+        session['difficluties_walking'] = form.difficluties_walking.data
+        session['non_slip'] = form.non_slip.data
+        session['grab_bars'] = form.grab_bars.data
+        session['telephone_reach'] = form.telephone_reach.data
+        session['difficulties_chairs'] = form.difficulties_chairs.data
+        session['items_reached'] = form.items_reached.data
+        session['handrails_needed']= form.handrails_needed.data
+        session['smoke_detectors']= form.smoke_detectors.data
+        session['fire_extinguisher']= form.fire_extinguisher.data
+        session['contact_information']= form.contact_information.data
+        session['key_entry']= form.key_entry.data
+        session['exit_plan']= form.exit_plan.data
+        
+        
         # this is for the data to be pushed into the database
         kid_name = form.kid_name.data
-        difficulty_bed = form.difficulty_bed.data
-        adequate_sunlight =form.adequate_sunlight.data
-        floor_hazard = form.floor_hazard.data
-        towel_rails = form.towel_rails.data
-        unsteady_standing = form.unsteady_standing.data
-        water_presence = form.water_presence.data
-        bench_height = form.bench_height.data
-        kitchen_reach = form.kitchen_reach.data
-        slip_products = form.slip_products.data
-        electrical_cords = form.electrical_cords.data
-        stairs_edge = form.stairs_edge.data
-        stairs_handrails = form.stairs_handrails.data
-        path_checked = form.path_checked.data
+        grandparent_name = form.grandparent_name.data
+        grandparent_gender =form.grandparent_gender.data
+        grandparent_age = form.grandparent_age.data
+        adequate_light = form.adequate_light.data
+        night_light = form.night_light.data
+        clear_path = form.clear_path.data
+        floors_condition = form.floors_condition.data
+        difficluties_walking = form.difficluties_walking.data
+        non_slip = form.non_slip.data
+        grab_bars = form.grab_bars.data
+        telephone_reach = form.telephone_reach.data
+        difficulties_chairs = form.difficulties_chairs.data
+        items_reached = form.items_reached.data
+        handrails_needed = form.handrails_needed.data
+        smoke_detectors = form.smoke_detectors.data
+        fire_extinguisher = form.fire_extinguisher.data
+        contact_information = form.contact_information.data
+        key_entry = form.key_entry.data
+        exit_plan = form.exit_plan.data
+        
 
         #create new object to insert in the database
-        new_entry = safety_questionnaire_database(kid_name, difficulty_bed, adequate_sunlight, floor_hazard,
-                    towel_rails, unsteady_standing, water_presence,bench_height, kitchen_reach,
-                     slip_products, electrical_cords, stairs_edge, stairs_handrails, path_checked )
+        new_entry = safety_questionnaire_database(kid_name,grandparent_name,grandparent_gender,grandparent_age,adequate_light,
+        night_light,clear_path,floors_condition,difficluties_walking,non_slip,grab_bars,telephone_reach,difficulties_chairs,
+        items_reached,handrails_needed,smoke_detectors,fire_extinguisher,contact_information,key_entry,exit_plan)
 
         #add new entry to the database
         db.session.add(new_entry)
