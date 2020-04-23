@@ -41,7 +41,7 @@ class safety_questionnaire_database(db.Model):
     grandparent_name = db.Column(db.Text)
     grandparent_gender = db.Column(db.Text)
     grandparent_age = db.Column(db.Text)
-    adequate_sunlight = db.Column(db.Text)
+    adequate_light = db.Column(db.Text)
     night_light = db.Column(db.Text)
     clear_path = db.Column(db.Text)
     floors_condition = db.Column(db.Text)
@@ -60,14 +60,14 @@ class safety_questionnaire_database(db.Model):
     
     #instantiate the values that are eing put up on the forms from the front end in the init method
     #the class
-    def __init__(self,kid_name,grandparent_name,grandparent_gender,grandparent_age,adequate_sunlight,night_light,
+    def __init__(self,kid_name,grandparent_name,grandparent_gender,grandparent_age,adequate_light,night_light,
     clear_path,floors_condition,difficluties_walking,non_slip,grab_bars,telephone_reach,difficulties_chairs,items_reached,
     handrails_needed,smoke_detectors,fire_extinguisher,contact_information,key_entry,exit_plan):
         self.kid_name = kid_name
         self.grandparent_name = grandparent_name
         self.grandparent_gender = grandparent_gender
         self.grandparent_age = grandparent_age
-        self.adequate_sunlight = adequate_sunlight
+        self.adequate_sunlight = adequate_light
         self.night_light = night_light
         self.clear_path = clear_path
         self.floors_condition = floors_condition
