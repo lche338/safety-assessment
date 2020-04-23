@@ -15,10 +15,10 @@ class SafetyQuestionnaireForm(FlaskForm):
                            
     grandparent_name = StringField('Please enter your grandparent name.',validators=[DataRequired()])
 
-    gender_grandparent = SelectField('Selet the gender of your grandparent:',
+    grandparent_gender = SelectField('Selet the gender of your grandparent:',
                     choices =[('Male','Male'),('Female','Female')],validators=[DataRequired()])
                            
-    age_grandparent = SelectField('Selet the age of your grandparents:',
+    grandparent_age = SelectField('Selet the age of your grandparents:',
                     choices =[('65-74','65-74'),('75-84','75-84'),('85-94','85-94'),('95+','95+'),('none of above or not sure','none of above or not sure')],validators=[DataRequired()])
 
     adequate_sunlight = SelectField('Does the house where your grandparent lived have adequate lighting in the following areas? (mutiple choice)',
