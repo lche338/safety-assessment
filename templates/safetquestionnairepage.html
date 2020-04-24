@@ -115,8 +115,8 @@
                 <div class="col-sm-12">
                     <div class="clients text-center wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
                         <h1 class="title">House Safety Assesment</h1>
-                        <p> Before Completing this questionnaire assesment, please look into your grandparents house and
-                            way of living.
+                        <p> Before Completing this questionnaire assesment, please sit with your grandparent and answer the questions together. 
+				Hope you can enjoy and play with it.
                         </p>
                         <p><img src="static/images/detective.jpg" class="img-responsive" alt="detective image"
                                 width="20%"></p>
@@ -131,52 +131,88 @@
                             <br>
                             <div class="row">
 
-
-
-                                {{form.kid_name(class = "", placeholder="Enter Your Name ")}}
+                                {{form.kid_name(class = "", placeholder="Enter Your Name: ")}}
                             </div>
                             <br>
                             <br>
                             <br>
                             <p><img src="static/images/Photos/kids/Artboard 16.png" class="img-responsive"
                                     alt="detective image" width="20%"></p>
+				
+			    {{ form.hidden_tag() }}
+                            {{ form.grandparent_name.label}}
+
+                            <br>
+                            <div class="row">
+				
+				{{form.grandparent_name(class = "", placeholder="Enter Your Grandparent's Name: ")}}
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+                            <p><img src="static/images/grandparent.png" class="img-responsive"
+                                    alt="grandparent image" width="20%"></p>
 
                             <br>
                             <br>
-                            {{ form.difficulty_bed.label}}{{form.difficulty_bed}}
+                            {{ form.grandparent_gender.label}}
+                            <br>{{form.grandparent_gender()}}
                             <br>
-                            {{ form.adequate_sunlight.label}}
-                            <br>{{form.adequate_sunlight()}}
-                            <br><br>
-                            {{ form.floor_hazard.label}}{{form.floor_hazard}}
+			    <br>
+                            {{ form.grandparent_age.label}}
+                            <br>{{form.grandparent_age()}}
                             <br>
-                            {{ form.towel_rails.label}}
-                            <br>{{form.towel_rails}}
+			    <br>
+			    {{ form.adequate_light.label}}
+                            <br>{{form.adequate_light()}}
                             <br>
+			    <br>
+			    {{ form.night_light.label}}
+                            <br>{{form.night_light()}}
                             <br>
-                            {{ form.unsteady_standing.label}}{{form.unsteady_standing}}
-                            <br>
-                            {{ form.water_presence.label}}
-                            <br>{{form.water_presence}}
-                            <br>
-                            <br>
-                            {{ form.bench_height.label}}
-                            <br>{{form.bench_height}}
-                            <br><br>
-                            {{ form.kitchen_reach.label}}{{form.kitchen_reach}}
-                            <br>
-                            {{ form.slip_products.label}}
-                            <br>{{form.slip_products}}
+			    <br>
+                            {{ form.clear_path.label}}{{form.clear_path}}
                             <br>
                             <br>
-                            {{ form.electrical_cords.label}}{{form.electrical_cords}}
+                            {{ form.floors_condition.label}}{{form.floors_condition}}
                             <br>
-                            {{ form.stairs_edge.label}}{{form.stairs_edge}}
                             <br>
-                            {{ form.stairs_handrails.label}}{{form.stairs_handrails}}
+			    {{ form.difficluties_walking.label}}{{form.difficluties_walking}}
                             <br>
-                            {{ form.path_checked.label}}{{form.path_checked}}
                             <br>
+                            {{ form.non_slip.label}}{{form.non_slip}}
+                            <br>
+			    <br>
+                            {{ form.grab_bars}}{{form.grab_bars}}
+                            <br>
+                            <br>
+                            {{ form.telephone_reach.label}}{{form.telephone_reach}}
+                            <br>
+			    <br>
+                            {{ form.difficulties_chairs.label}}{{form.difficulties_chairs}}
+                            <br>
+			    <br>
+                            {{ form.items_reached.label}}{{form.items_reached}}
+                            <br>
+			    <br>
+                            {{ form.handrails_needed.label}}{{form.handrails_needed}}
+                            <br>
+			    <br>
+			    {{ form.smoke_detectors.label}}{{form.smoke_detectors}}
+                            <br>
+			    <br>
+			    {{ form.fire_extinguisher.label}}{{form.fire_extinguisher}}
+                            <br>
+			    <br>
+			    {{ form.contact_information.label}}{{form.contact_information}}
+                            <br>
+			    <br>
+			    {{ form.key_entry.label}}{{form.key_entry}}
+                            <br>
+			    <br>
+			    {{ form.exit_plan.label}}{{form.exit_plan}}
+                            <br>
+			    <br>
                             {{ form.submit(class= "btn btn-success")}}
                         </div>
                     </form>
