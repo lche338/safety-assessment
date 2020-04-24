@@ -2,22 +2,17 @@
 {% block content %}
   <body>
     {% if session['kid_name']  %}
-    <h3> Thank You {{ session['kid_name'] }}, here is the information you have given us</h3>
+    <h3> Thank You {{ session['kid_name'] }}, here is the information you have given us </h3>
     <ul>
-        <li>{{ session['kid_name'] }}</li>
-        <li>{{ session['difficulty_bed'] }}</li>
-        <li>{{ session['adequate_sunlight'] }}</li>
-        <li>{{ session['floor_hazard'] }}</li>
-        <li>{{ session['towel_rails'] }}</li>
-        <li>{{ session['unsteady_standing'] }}</li>
-        <li>{{ session['water_presence'] }}</li>
-        <li>{{ session['bench_height'] }}</li>
-        <li>{{ session['kitchen_reach'] }}</li>
-        <li>{{ session['slip_products'] }}</li>
-        <li>{{ session['electrical_cords'] }}</li>
-        <li>{{ session['stairs_edge'] }}</li>
-        <li>{{ session['stairs_handrails'] }}</li>
-        <li>{{ session['path_checked'] }}</li>
+        <li> Your name is {{ session['kid_name'] }}</li>
+        <li> You are assisting your grandparent {{ session['grandparent_name'] }} with his/her home safety check </li>
+        <li> Your grandparent {{ session['grandparent_name'] }} 's gender is {{ session['grandparent_gender'] }}</li>
+        <li> Your grandparent {{ session['grandparent_name'] }} 's age is {{ session['grandparent_age'] }}</li>
+        <li> Your grandparent {{ session['grandparent_name'] }} 's house has adequate light in the following area {{ session['adequate_light'] }}</li>
+        <li> Your grandparent {{ session['grandparent_name'] }} 's house has night light in the following area {{ session['night_light'] }}</li>
+        <li> {{ session['clear_path'] }} You think your grandparent {{ session['grandparent_name'] }} 's house has a clear, unobstructed path through the room</li>
+        <li> {{ session['floors_condition'] }} You think your grandparent {{ session['grandparent_name'] }} 's house there is wood floors slip resistant and carpets in good condition with non-slip backing (not frayed or turned up, no upturned corner that someone could trip over)m</li>  
+        
     </ul>
   {% else %}
   <h2> please fill the questionnaire first</h2>
