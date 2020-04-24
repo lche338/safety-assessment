@@ -12,37 +12,50 @@
     <table class="table">
       <tr>
         <th scope="col"> Kid name</th>
-        <th scope="col"> Difficult with bed</th>
-        <th scope="col"> Adequate Sunlight</th>
-        <th scope="col"> Floor Hazard </th>
-        <th scope="col"> Towel rails</th>
-        <th scope="col"> Unsteady Standing</th>
-        <th scope="col"> Water presence at floor</th>
-        <th scope="col"> Bench height inadequate</th>
-        <th scope="col"> Kitchen items within reach</th>
-        <th scope="col"> Slippery products at home</th>
-        <th scope="col"> Electrical cords on the floor </th>
-        <th scope="col"> Stairs are edgy</th>
-        <th scope="col"> Stairs handrails</th>
-        <th scope="col"> Path is checked?</th>
+        <th scope="col"> Grandparent name</th>
+        <th scope="col"> Grandparent gender</th>
+        <th scope="col"> Grandparent age</th>
+        <th scope="col"> Adequate light</th>
+        <th scope="col"> Night light </th>
+        <th scope="col"> Clear path</th>
+        <th scope="col"> Floors condition</th>
+        <th scope="col"> Difficluties walking</th>
+        <th scope="col"> Non slip</th>
+        <th scope="col"> Grab bars</th>
+        <th scope="col"> Telephone reach</th>
+        <th scope="col"> Difficulties chairs </th>
+        <th scope="col"> Items reached</th>
+        <th scope="col"> Handrails needed</th>
+        <th scope="col"> Smoke detectors</th>
+        <th scope="col"> Fire extinguisher</th>
+        <th scope="col"> Contact information</th>
+        <th scope="col"> Key entry</th>
+        <th scope="col"> Exit plan</th>
       </tr>
 
         {% for data in questionnaire %}
         <tr>
         <td> {{ data.kid_name}} </td>
-        <td> {{ data.difficulty_bed }}</td>
-        <td> {{ data.adequate_sunlight }}</td>
-        <td> {{ data.floor_hazard }}</td>
-        <td> {{ data.towel_rails }}</td>
-        <td> {{ data.unsteady_standing }}</td>
-        <td> {{ data.water_presence }}</td>
-        <td> {{ data.bench_height }}</td>
-        <td> {{ data.kitchen_reach }}</td>
-        <td> {{ data.slip_products }}</td>
-        <td> {{ data.electrical_cords }}</td>
-        <td> {{ data.stairs_edge }}</td>
-        <td> {{ data.stairs_handrails }}</td>
-        <td> {{ data.path_checked }}</td>
+        <td> {{ data.grandparent_name }}</td>
+        <td> {{ data.grandparent_gender }}</td>
+        <td> {{ data.grandparent_age }}</td>
+        <td> {{ data.adequate_light }}</td>
+        <td> {{ data.night_light }}</td>
+        <td> {{ data.clear_path }}</td>
+        <td> {{ data.floors_condition }}</td>
+        <td> {{ data.difficluties_walking }}</td>
+        <td> {{ data.non_slip }}</td>
+        <td> {{ data.grab_bars }}</td>
+        <td> {{ data.telephone_reach }}</td>
+        <td> {{ data.difficulties_chairs }}</td>
+        <td> {{ data.items_reached }}</td>
+        <td> {{ data.handrails_needed }}</td>
+        <td> {{ data.smoke_detectors }}</td>
+        <td> {{ data.fire_extinguisher }}</td>
+        <td> {{ data.contact_information }}</td>
+        <td> {{ data.key_entry }}</td>
+        <td> {{ data.exit_plan }}</td> 
+        
 
         </tr>
         {% endfor %}
