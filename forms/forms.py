@@ -38,7 +38,7 @@ class SafetyQuestionnaireForm(FlaskForm):
 
     non_slip = RadioField('Do you think there is non-slip/non-skid floor surface even when wet in the Bathroom and Laundry?',
                         choices =[('Yes','Yes'),('No','No')],validators=[DataRequired()])
-
+    
     grab_bars = RadioField('Ask your grandparent are there grab bars in the Bathroom as he/she needed?',
                         choices =[('Yes','Yes'),('No','No')],validators=[DataRequired()])
 
