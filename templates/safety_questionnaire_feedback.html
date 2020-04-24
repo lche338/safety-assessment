@@ -2,8 +2,9 @@
 {% block content %}
   <body>
     {% if session['kid_name']  %}
+    {% if session['grandparent_name']  %}
     <h3> Thank You {{ session['kid_name'] }} for assisting your grandparent {{ session['grandparent_name'] }} with his/her home safety check. Here are the recommendations for you and your grandparent. </h3>
-    <ul>
+
         <h3> Make sure adequate lighting in Bedroom, Living room, Driveway & Garage, Walkways, Stairs,  Bathroom, Laundry and Kitchen. </h3>
         <h3> Make sure night-lights or signs giving directions to Bedroom, Living room, Driveway & Garage, Walkways, Stairs,  Bathroom, Laundry and Kitchen. </h3>
         <h3> Make sure a clear, unobstructed path through the room (no clutter, cords, wires, baskets or other things to trip over). Check for broken pavers and ask for help to have any raised pavers re-laid. Keep paths free of moss and leaves, and remove any obstacles such as gardening tools, hoses and small pots.  </h3>
@@ -26,7 +27,7 @@
         
     
         
-    </ul>
+
   {% else %}
   <h2> please fill the questionnaire first</h2>
   <a href="{{ url_for('safety_questionnaire') }}">Go to questionnaire page</a>
