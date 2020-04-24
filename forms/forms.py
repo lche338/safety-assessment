@@ -11,7 +11,7 @@ from wtforms import ValidationError
 
 class SafetyQuestionnaireForm(FlaskForm):
     #create the forms details
-    kid_name = StringField('Please enter your name.',validators=[DataRequired()]
+    kid_name = StringField('Please enter your name.',validators=[DataRequired()])
                            
     grandparent_name = StringField('Please enter your grandparent name.',validators=[DataRequired()])
 
