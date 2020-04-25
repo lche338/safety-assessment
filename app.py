@@ -66,7 +66,7 @@ def safety_questionnaire():
         session['night_light'] = form.night_light.data
         session['clear_path'] = form.clear_path.data
         session['floors_condition'] = form.floors_condition.data
-        session['difficluties_walking'] = form.difficluties_walking.data
+        session['difficulties_walking'] = form.difficulties_walking.data
         session['non_slip'] = form.non_slip.data
         session['grab_bars'] = form.grab_bars.data
         session['telephone_reach'] = form.telephone_reach.data
@@ -78,8 +78,8 @@ def safety_questionnaire():
         session['contact_information']= form.contact_information.data
         session['key_entry']= form.key_entry.data
         session['exit_plan']= form.exit_plan.data
-        
-        
+
+
         # this is for the data to be pushed into the database
         kid_name = form.kid_name.data
         grandparent_name = form.grandparent_name.data
@@ -89,7 +89,7 @@ def safety_questionnaire():
         night_light = form.night_light.data
         clear_path = form.clear_path.data
         floors_condition = form.floors_condition.data
-        difficluties_walking = form.difficluties_walking.data
+        difficulties_walking = form.difficulties_walking.data
         non_slip = form.non_slip.data
         grab_bars = form.grab_bars.data
         telephone_reach = form.telephone_reach.data
@@ -101,12 +101,12 @@ def safety_questionnaire():
         contact_information = form.contact_information.data
         key_entry = form.key_entry.data
         exit_plan = form.exit_plan.data
-        
+
 
         #create new object to insert in the database
-        new_entry = safety_questionnaire_database(kid_name,grandparent_name,grandparent_gender,grandparent_age,adequate_light,
-        night_light,clear_path,floors_condition,difficluties_walking,non_slip,grab_bars,telephone_reach,difficulties_chairs,
-        items_reached,handrails_needed,smoke_detectors,fire_extinguisher,contact_information,key_entry,exit_plan)
+        new_entry = safety_questionnaire_database(kid_name, grandparent_name, grandparent_gender, grandparent_age, adequate_light,
+        night_light, clear_path, floors_condition, difficulties_walking, non_slip,grab_bars, telephone_reach,difficulties_chairs,
+        items_reached, handrails_needed, smoke_detectors, fire_extinguisher, contact_information, key_entry,exit_plan )
 
         #add new entry to the database
         db.session.add(new_entry)
