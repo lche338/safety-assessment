@@ -12,12 +12,12 @@ from wtforms import ValidationError
 class SafetyQuestionnaireForm(FlaskForm):
     #create the forms details
     kid_name = StringField('Please enter your name.',validators=[DataRequired()])
-                           
+
     grandparent_name = StringField('Please enter your grandparent name.',validators=[DataRequired()])
 
     grandparent_gender = SelectField('Selet the gender of your grandparent:',
                     choices =[(' ',' '),('Male','Male'),('Female','Female')],validators=[DataRequired()])
-                           
+
     grandparent_age = SelectField('Selet the age of your grandparents:',
                     choices =[(' ',' '),('65-74','65-74'),('75-84','75-84'),('85-94','85-94'),('95+','95+'),('none of above or not sure','none of above or not sure')],validators=[DataRequired()])
 
@@ -25,20 +25,20 @@ class SafetyQuestionnaireForm(FlaskForm):
                         choices=[(' ',' '),('Bedroom','Bedroom'),('Kitchen','Kitchen'),('Living Room','Living Room'),('Walkways','Walkways'),('Laundry','Laundry'),('Bathroom','Bathroom'),('Stairs','Stairs'),('Driveway and garage','Driveway and garage')], validators=[DataRequired()])
 
     night_light = SelectField('Does the house where your grandparent lived have night-lights or signs giving directions to the following areas? (mutiple choice)',
-                        choices=[(' ',' '),('Bedroom','Bedroom'),('Kitchen','Kitchen'),('Living Room','Living Room'),('Walkways','Walkways'),('Laundry','Laundry'),('Bathroom','Bathroom'),('Stairs','Stairs'),('Driveway and garage','Driveway and garage')], validators=[DataRequired()])                      
-                           
+                        choices=[(' ',' '),('Bedroom','Bedroom'),('Kitchen','Kitchen'),('Living Room','Living Room'),('Walkways','Walkways'),('Laundry','Laundry'),('Bathroom','Bathroom'),('Stairs','Stairs'),('Driveway and garage','Driveway and garage')], validators=[DataRequired()])
+
     clear_path = RadioField('Do you think there is a clear, unobstructed path through the room?',
                     choices =[('Yes','Yes'),('No','No')],validators=[DataRequired()])
 
     floors_condition = RadioField('Do you think there is wood floors slip resistant and carpets in good condition with non-slip backing (not frayed or turned up, no upturned corner that someone could trip over)?',
                         choices =[('Yes','Yes'),('No','No')],validators=[DataRequired()])
 
-    difficluties_walking = RadioField('Do you think your grandparent have difficluties in walking by himself/herself?',
+    difficulties_walking = RadioField('Do you think your grandparent have difficulties in walking by himself/herself?',
                     choices =[('Yes','Yes'),('No','No')],validators=[DataRequired()])
 
     non_slip = RadioField('Do you think there is non-slip/non-skid floor surface even when wet in the Bathroom and Laundry?',
                         choices =[('Yes','Yes'),('No','No')],validators=[DataRequired()])
-    
+
     grab_bars = RadioField('Ask your grandparent are there grab bars in the Bathroom as he/she needed?',
                         choices =[('Yes','Yes'),('No','No')],validators=[DataRequired()])
 
@@ -59,15 +59,15 @@ class SafetyQuestionnaireForm(FlaskForm):
 
     fire_extinguisher = RadioField('Is there a fire extinguisher in the kitchen? and not expire?',
                     choices =[('Yes','Yes'),('No','No')],validators=[DataRequired()])
-                           
+
     contact_information = RadioField('Ask your grandparent if he/she has contact information to someone in an emergency? If yes, Check if emergency numbers posted on or near all telephones?',
                     choices =[('Yes','Yes'),('No','No')],validators=[DataRequired()])
-                           
+
     key_entry = RadioField('Is there a safe place outside to hide a key to the house for emergency entry?',
                     choices =[('Yes','Yes'),('No','No')],validators=[DataRequired()])
-                           
+
     exit_plan = RadioField('Ask your grandparents if there is an emergency exit plan?',
-                    choices =[('Yes','Yes'),('No','No')],validators=[DataRequired()])     
+                    choices =[('Yes','Yes'),('No','No')],validators=[DataRequired()])
 
     submit = SubmitField('Submit Safety Assesment Questonnaire')
 
