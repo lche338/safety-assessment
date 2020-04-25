@@ -1,7 +1,9 @@
-{% extends "layout.html" %}
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+  <body>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
@@ -14,11 +16,6 @@
     <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/responsive.css') }}" rel="stylesheet">
     <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.js') }}"></script>
-
-    <!-- [if lt IE 9]>
-	    <script src="js/html5shiv.js"></script>
-	    <script src="js/respond.min.js"></script>
-    <![endif] -->
     <link rel="shortcut icon" href="static/images/ico/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144"
         href="static/images/ico/apple-touch-icon-144-precomposed.png">
@@ -26,64 +23,159 @@
         href="static/images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="static/images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="static/images/ico/apple-touch-icon-57-precomposed.png">
-</head>
-{% block content %}
+    <body>
+      <header id="header">
+          <div class="navbar navbar-inverse" role="banner">
+              <div class="container">
+                  <div class="navbar-header">
+                      <a class="navbar-brand" href="{{ url_for('index') }}">
+                          <h1><img src="static/images/logo-care360.png" alt="logo" class="img-fluid" height="75px"
+                                  width="75px"> Care 360</h1>
+                      </a>
+                      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                          <span class="sr-only">Toggle navigation</span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                      </button>
+  
+  
+  
+                  </div>
+                  <div class="collapse navbar-collapse">
+                      <ul class="nav navbar-nav navbar-right">
+                          <li class="active"><a href="{{ url_for('index') }}">Home</a></li>
+                          <li class="dropdown"><a href="#">Home Safety<i class="fa fa-angle-down"></i></a>
+                              <ul role="menu" class="sub-menu">
+                                  <li><a href="{{ url_for('safety_questionnaire')}}">Home Safety Questionnaire</a></li>
+                                  <li><a href="{{ url_for('generalsafety')}}">General Safety Guidelines</a></li>
+                                  <li><a href="{{ url_for('safetybycouncil')}}"> Natural Disaster Assist</a></li>
+                                  <li><a href="#"> COVID-19 Injuries Assist</a></li>
+  
+                              </ul>
+                          </li>
+                          <li><a href="{{ url_for('login') }}">Admin Login</a></li>
+                        <li><a href="#">Credits</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </header>
+    <section id="home-slider">
+      <div class="container">
+          <div class="row">
+              <div class="main-slider">
+                  <div class="slide-text">
+                      <h1>Recommendations</h1>
+                      <p>
+                        Thank You {{ session['kid_name'] }} for assisting your grandparent with his/her home safety check! Here are the recommendations for you and your grandparent.
+                      </p>
+
+
+
+
   <body>
     {% if session['kid_name']  %}
-    <h3> Thank You {{ session['kid_name'] }}, here is the information you have given us</h3>
-    <ul>
-        <li>{{ session['kid_name'] }}</li>
-        <li>{{ session['grandparent_name'] }}</li>
-        <li>{{ session['grandparent_gender'] }}</li>
-        <li>{{ session['grandparent_age'] }}</li>
-        <li>{{ session['adequate_light'] }}</li>
-        <li>{{ session['night_light'] }}</li>
-        <li>{{ session['clear_path'] }}</li>
-        <li>{{ session['floors_condition'] }}</li>
-        <li>{{ session['difficulties_walking'] }}</li>
-        <li>{{ session['non_slip'] }}</li>
-        <li>{{ session['grab_bars'] }}</li>
-        <li>{{ session['telephone_reach'] }}</li>
-        <li>{{ session['difficulties_chairs'] }}</li>
-        <li>{{ session['items_reached'] }}</li>
-        <li>{{ session['handrails_needed'] }}</li>
-        <li>{{ session['smoke_detectors'] }}</li>
-        <li>{{ session['fire_extinguisher'] }}</li>
-        <li>{{ session['contact_information'] }}</li>
-        <li>{{ session['key_entry'] }}</li>
-        <li>{{ session['exit_plan'] }}</li>
-    </ul>
-
-    <h3> Here are the recommendations for you and your grandparent. </h3>
+    {% if session['grandparent_name']  %}
+    {% if session['grandparent_gender']  %}
+    {% if session['grandparent_age']  %}
+    
+    
+    <h3> As following: </h3>
     <ol>
-        <li>Make sure adequate lighting in Bedroom, Living room, Driveway & Garage, Walkways, Stairs,  Bathroom, Laundry and Kitchen.</li>
-        <li>Make sure night-lights or signs giving directions to Bedroom, Living room, Driveway & Garage, Walkways, Stairs,  Bathroom, Laundry and Kitchen.</li>
-        <li>Make sure a clear, unobstructed path through the room (no clutter, cords, wires, baskets or other things to trip over). Check for broken pavers and ask for help to have any raised pavers re-laid. Keep paths free of moss and leaves, and remove any obstacles such as gardening tools, hoses and small pots.</li>
-        <li>Make sure wood floors slip resistant and carpets in good condition, area rugs have non-slip backing.</li>
-        <li>Recommend your grandparent use of walking stick or walker if necessary</li>
-        <li>The flooring non-slip/non-skid products are required to purchase. A non-skid bathmat is required in the bathtub.</li>
-        <li>Grab rails need to installed in the bathroom as needed. Make sure there are sturdy grab bars in the tub, shower, toilet, if needed.</li>
-        <li>Make sure there is a telephone within reach of the bed, and telephones positioned low enough so they can be reached if a fall occurs.</li>
-        <li>Making sure supports (assistive walking devices cane, walker, wheelchair within reach of them) for them, if needed.</li>
-        <li>Help arrange the items in kitchen so it will be easily to reach the items that need to use frequently. Place them between hip and eye level.</li>
-        <li>Ask for help in requiring additional handrails. Handrail height should not be less than 900mm or more than 1100mm. Make sure there are handrails on at least one side of all steps and stairways. Ideally, there should be handrails on both sides of steps and stairways.</li>
-        <li>Make sure smoke detectors installed and working on every level of the home, outside sleeping areas and inside bedrooms.</li>
-        <li>Make sure there is a fire extinguisher in the kitchen. If expire then replace it.</li>
-        <li>Write down at least one emergency contact number of family member or friend of grandparent and posted on or near all telephones.</li>
-        <li>Discuss with your grandparent and choose a safe place outside to hide a key to the house for emergency entry.</li>
-        <li>Discuss with family member for creating an emergency exit plan.</li>
-        <li>You can look for additional infromation to create an emergency exit plan through following link<br>
+    {% if session['adequate_light'] %}
+        <li> Make sure adequate lighting in Bedroom, Living room, Driveway & Garage, Walkways, Stairs,  Bathroom, Laundry and Kitchen. </li>
+        {% endif %}
+    {% if session['night-lights'] %}
+        <li> Make sure night-lights or signs giving directions to Bedroom, Living room, Driveway & Garage, Walkways, Stairs,  Bathroom, Laundry and Kitchen. </li>
+        {% endif %}
+    {% if session['clear_path'] %}
+        <li> Make sure a clear, unobstructed path through the room (no clutter, cords, wires, baskets or other things to trip over). Check for broken pavers and ask for help to have any raised pavers re-laid. Keep paths free of moss and leaves, and remove any obstacles such as gardening tools, hoses and small pots.  </li>
+        {% endif %}
+    {% if session['floors_condition'] %}
+        <li> Make sure wood floors slip resistant and carpets in good condition, area rugs have non-slip backing. </li>
+        {% endif %}
+    {% if session['difficulties_walking'] %}
+        <li> Recommend your grandparent use of walking stick or walker if necessary </li>
+        {% endif %}
+    {% if session['non_slip'] %}
+        <li> The flooring non-slip/non-skid products are required to purchase. A non-skid bathmat is required in the bathtub. </li>
+        {% endif %}
+    {% if session['grab_bars'] %}
+        <li> Grab rails need to installed in the bathroom as needed. Make sure there are sturdy grab bars in the tub, shower, toilet, if needed. </li>
+        {% endif %}
+    {% if session['telephone_reach'] %}   
+        <li> Make sure there is a telephone within reach of the bed, and telephones positioned low enough so they can be reached if a fall occurs. </li>
+        {% endif %}
+    {% if session['difficulties_chairs'] %} 
+        <li> Making sure supports (assistive walking devices cane, walker, wheelchair within reach of them) for them, if needed. </li>
+        {% endif %}
+    {% if session['items_reached'] %} 
+        <li> Help arrange the items in kitchen so it will be easily to reach the items that need to use frequently. Place them between hip and eye level. </li>
+        {% endif %}
+    {% if session['handrails_needed'] %} 
+        <li> Ask for help in requiring additional handrails. Handrail height should not be less than 900mm or more than 1100mm. Make sure there are handrails on at least one side of all steps and stairways. Ideally, there should be handrails on both sides of steps and stairways. </li>
+        {% endif %}
+    {% if session['smoke_detectors'] %} 
+        <li> Make sure smoke detectors installed and working on every level of the home, outside sleeping areas and inside bedrooms. </li>
+        {% endif %}
+    {% if session['fire_extinguisher'] %} 
+        <li> Make sure there is a fire extinguisher in the kitchen. If expire then replace it. </li>
+        {% endif %}
+    {% if session['contact_information'] %} 
+        <li> Write down at least one emergency contact number of family member or friend of grandparent and posted on or near all telephones. </li>
+        {% endif %}
+    {% if session['key_entry'] %} 
+        <li> Discuss with your grandparent and choose a safe place outside to hide a key to the house for emergency entry. </li>
+        {% endif %}
+    {% if session['exit_plan'] %} 
+        <li> Discuss with family member for creating an emergency exit plan. </li>
+        <li> You can look for additional infromation to create an emergency exit plan through following link </li>
         <a href="https://www.fire.nsw.gov.au/page.php?id=883">https://www.fire.nsw.gov.au/page.php?id=883</a> or <a href="https://www.smartdraw.com/evacuation-plan/fire-escape-plan-maker.htm">https://www.smartdraw.com/evacuation-plan/fire-escape-plan-maker.htm</a></li>
-    </ol>
-
-
-
-
+        {% endif %}
+    </ol>   
+        
+    
+        
 
   {% else %}
   <h2> please fill the questionnaire first</h2>
   <a href="{{ url_for('safety_questionnaire') }}">Go to questionnaire page</a>
   {% endif %}
+  {% endif %}
+  {% endif %}
+  {% endif %}
   </body>
-  </html>
-{% endblock content %}
+  <footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center bottom-separator">
+                <img src="static/images/home/under.png" class="img-responsive inline" alt="">
+            </div>
+
+
+
+            <div class="col-sm-12">
+                <div class="copyright-text text-center">
+                    <p>Care360</p>
+                    <p>
+                        Disclaimer: We provide recommendations on the basis of Australian Government Home
+                        Safety,Diet and Physical Activity Guidelines for Older people.
+                    </p>
+                    <p> Credits : WebUi Theme by Themeum</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--/#footer-->
+
+<script type="text/javascript" src="static/js/jquery.js"></script>
+<script type="text/javascript" src="static/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="static/js/lightbox.min.js"></script>
+<script type="text/javascript" src="static/js/wow.min.js"></script>
+<script type="text/javascript" src="static/js/main.js"></script>
+</body>
+
+</html>
